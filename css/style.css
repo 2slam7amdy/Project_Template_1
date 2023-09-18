@@ -1,0 +1,362 @@
+/* General CSS */
+:root {
+    --main-font: Verdana, sans-serif;
+    --main-font-size: 15px;
+    --main-color: #FFF;
+    --second-color: #000;
+    --third-color: #CCC;
+    --border-color: #f1f1f1;
+    /* --main-transition: 0.3s; */
+
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+html {
+    scroll-behavior: smooth;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+body {
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+    height: 100vh;
+}
+a, a:hover, a:visited, a:active {
+    text-decoration: none;
+}
+a, a:visited, a:active {
+    color: var(--second-color);
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.container .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.container h2 {
+    font-weight: normal;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.container p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+/* Nav CSS */
+nav {
+    background-color: var(--main-color);
+    color: var(--second-color);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+nav.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 50%);
+}
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .container .nav-logo {
+    color: var(--second-color);
+    text-decoration: none;
+    letter-spacing: 4px;
+    padding: 10px;
+}
+nav .container .nav-logo span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+nav .container ul {
+    list-style: none;
+}
+@media (max-width: 767px) {
+    nav .container ul {
+        display: none;
+    }
+}
+nav .container ul li {
+    display: inline-block;
+}
+nav .container ul li a {
+    letter-spacing: 4px;
+    padding: 10px;
+}
+nav .container ul li a:hover,
+nav .container .nav-logo:hover {
+    background-color: var(--third-color);
+}
+/* Header CSS */
+header .header-logo {
+    position: relative;
+}
+header .header-logo img {
+    max-width: 100%;
+}
+header .header-logo h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    color: var(--main-color);
+    font-weight: normal;
+}
+header .header-logo h1 span {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(0 0 0 / 50%);
+    padding: 5px;
+}
+/* Projects CSS */
+.projects {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.projects .container .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.projects .container .boxes .box {
+    position: relative;
+    overflow: hidden;
+}
+.projects .container .boxes .box img {
+    max-width: 100%;
+}
+.projects .container .boxes .box:hover img {
+    animation-name: zoom;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(1) rotate(0deg);
+        -webkit-transform: scale(1) rotate(0deg);
+        -moz-transform: scale(1) rotate(0deg);
+        -ms-transform: scale(1) rotate(0deg);
+        -o-transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.1) rotate(5deg);
+        -webkit-transform: scale(1.1) rotate(5deg);
+        -moz-transform: scale(1.1) rotate(5deg);
+        -ms-transform: scale(1.1) rotate(5deg);
+        -o-transform: scale(1.1) rotate(5deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(10deg);
+        -webkit-transform: scale(1.2) rotate(10deg);
+        -moz-transform: scale(1.2) rotate(10deg);
+        -ms-transform: scale(1.2) rotate(10deg);
+        -o-transform: scale(1.2) rotate(10deg);
+    }
+    75% {
+        transform: scale(1.4) rotate(15deg);
+        -webkit-transform: scale(1.4) rotate(15deg);
+        -moz-transform: scale(1.4) rotate(15deg);
+        -ms-transform: scale(1.4) rotate(15deg);
+        -o-transform: scale(1.4) rotate(15deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        -webkit-transform: scale(1) rotate(0deg);
+        -moz-transform: scale(1) rotate(0deg);
+        -ms-transform: scale(1) rotate(0deg);
+        -o-transform: scale(1) rotate(0deg);
+    }
+}
+.projects .container .boxes .box span {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 6px 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.projects .container .boxes .box span::selection {
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+/* About CSS */
+.about {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.about .container .boxes .box img {
+    max-width: 100%;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
+.about .container .boxes .box:hover img {
+    animation-name: filter;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+}
+@keyframes filter {
+    0% {
+        filter: grayscale(1);
+        -webkit-filter: grayscale(1);
+}
+    50% {
+        filter: grayscale(0);
+        -webkit-filter: grayscale(0);
+}
+    100% {
+        filter: grayscale(1);
+        -webkit-filter: grayscale(10);
+}
+}
+.about .container .boxes .box h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 10px 5px 0;
+}
+.about .container .boxes .box .rank {
+    opacity: 0.5;
+    padding: 10px 5px 0;
+}
+.about .container .boxes .box .text {
+    padding: 10px 5px 0;
+}
+.about .container .boxes .box .contact {
+    display: block;
+    background-color: var(--border-color);
+    color:var(--second-color);
+    padding: 10px;
+    margin: 10px 0 0;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    /* transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition); */
+}
+.about .container .boxes .box .contact:hover {
+    background-color: var(--third-color);
+}
+/* Contact CSS */
+.contact .container input:not([type="submit"]),
+.contact .container textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid var(--third-color);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    color: #9E9E9E;
+    font-size: 16px;
+    letter-spacing: 4px;
+    /* transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition); */
+}
+.contact .container textarea {
+    height: 150px;
+}
+.contact .container input:not([type="submit"]):focus,
+.contact .container textarea:focus,
+.contact .container input:not([type="submit"]):visited,
+.contact .container textarea:visited {
+    color: var(--second-color);
+    letter-spacing: 0;
+}
+.contact .container input:not([type="submit"]):hover,
+.contact .container textarea:hover {
+    border-color: var(--second-color);
+}
+.contact .container input[type="submit"] {
+    display: inline-block;
+    border: none;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 10px 20px;
+    font-size: 18px;
+    /* transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition); */
+}
+.contact .container input[type="submit"]:hover {
+    background-color: var(--third-color);
+    color: var(--second-color);
+    cursor: pointer;
+}
+.contact .container .map {
+    max-width: 100%;
+    margin-top: 20px;
+}
+/* Footer CSS */
+.footer {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+}
+.footer .container a {
+    color: var(--main-color);
+    /* transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition); */
+}
+.footer .container i {
+    font-size: 18px;
+    color: #E91E63;
+    vertical-align: bottom;
+}
+.footer .container a:hover {
+    color: var(--third-color);
+}
